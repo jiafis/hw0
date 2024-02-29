@@ -22,9 +22,25 @@ body {
 }
 .style5 {font-size: 12px}
 -->
-</style></head>
+</style>
 
-<body>
+
+
+<SCRIPT Language="JavaScript">
+var msg="這是用JAVA Script 所做出來的跑馬燈，打字效果的喔！";
+var interval = 100;
+seq = 0;
+function Scroll() {
+document.tmForm.tmText.value = msg.substring(0, seq+1);
+seq++;
+if ( seq >= msg.length ) { seq = 0 };
+window.setTimeout("Scroll();", interval );
+}   
+</SCRIPT>
+
+</head>
+
+<body OnLoad="Scroll();">
 <table id="___01" width="760" height="196" border="0" cellpadding="0" cellspacing="0">
   <tr>
     <td colspan="5"><!-- #BeginLibraryItem "/Library/9-P1_Ok.lbi" -->
@@ -47,7 +63,13 @@ body {
           <td rowspan="4" bgcolor="#FFFFFF"><span class="style1">NEW</span></td>
           <td colspan="3" background="image/main_03.jpg"><table width="84%"  border="0" align="center" cellpadding="0" cellspacing="0">
               <tr>
-                <td>網誌</td>
+                <td>
+                  
+                  
+                  
+                  <FORM Name=tmForm><INPUT Type=Text Name=tmText Size=35></FORM>
+                    
+                    </td>
               </tr>
           </table></td>
           <td rowspan="2" background="image/main_04.jpg">

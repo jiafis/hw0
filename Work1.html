@@ -11,7 +11,7 @@ name=Keywords><LINK href="images/main.css" type=text/css rel=stylesheet>
 
 
 </HEAD>
-<BODY bgColor=white leftMargin=0 topMargin=0 MARGINWIDTH="0" MARGINHEIGHT="0">
+<BODY onload="snow();" Kaggle bgColor=white leftMargin=0 topMargin=0 MARGINWIDTH="0" MARGINHEIGHT="0">
 <table width="699" border="0" align="center" cellpadding="0" cellspacing="1">
   <tr>
     <td><IMG height=34 src="image/pass1.png" width=697></td>
@@ -217,5 +217,69 @@ name=Keywords><LINK href="images/main.css" type=text/css rel=stylesheet>
       </TABLE>
     </form></td>
   </tr>
-</table>
+</table><script type="text/javascript">
+  // 程式作者：風痕影（hit1205@m70.url.com.tw）
+  // 作者網站：風痕水影（http://hit1205.blogdns.org/）
+  // 製作日期：2004年11月15-17日
+  // 更新日期：v1.1 2004年12月25日
+  n=100; // 雪花數目
+  wind=100; // 風力
+  re=10; // 更新
+  vy=4; // 雪花速度
+  vx=3; // 搖晃程度
+  img="https://i.pinimg.com/736x/9e/de/71/9ede71ea3d85f9a80f197ac36eac9c3f.jpg"; // 圖檔
+  img_h=10; // 雪花高
+  h=10; // 效果範圍高
+  w=1000; // 效果範圍寬  
+  for(i=0;i<n;i++){document.write("<div id=\"snow"+i+"\" style=\"position:absolute;top:-"+(Math.random()*h+img_h)+"px;left:"+Math.random()*(w-img_h)+"px;\"><img src=\""+img+"\" border=\"0\"></div>");} 
+  function snow(){
+    for(i=0;i<n;i++){
+      dgs=document.getElementById("snow"+i).style;
+      if((parseInt(dgs.top)<h)&&(parseInt(dgs.left)<w)&&(parseInt(dgs.left)>-img_h)){
+        if(Math.round(Math.random())==1){o=1;}else{o=-1;}
+        dgs.top=parseInt(dgs.top)+vy+"px";
+        dgs.left=parseInt(dgs.left)+Math.random()*vx*o+wind+"px";
+        }
+      else{
+        dgs.top=-(Math.random()*h+img_h)+"px";
+        dgs.left=Math.random()*(w-img_h)+"px";
+        }
+    }
+    setTimeout("snow();",re);
+  }
+  </script>
+
+
+<script type="text/javascript">
+  // 程式作者：風痕影（hit1205@m70.url.com.tw）
+  // 作者網站：風痕水影（http://hit1205.blogdns.org/）
+  // 製作日期：2004年11月15-17日
+  // 更新日期：v1.1 2004年12月25日
+  n=6; // 雪花數目
+  wind=0; // 風力
+  re=60; // 更新
+  vy=4; // 雪花速度
+  vx=4; // 搖晃程度
+  img="http://dob.tnc.edu.tw/authorHD/1/snow.gif"; // 圖檔
+  img_h=30; // 雪花高
+  h=250; // 效果範圍高
+  w=300; // 效果範圍寬
+  for(i=0;i<n;i++){document.write("<div id=\"snow"+i+"\" style=\"position:absolute;top:-"+(Math.random()*h+img_h)+"px;left:"+Math.random()*(w-img_h)+"px;\"><img src=\""+img+"\" border=\"0\"></div>");} 
+  function snow(){
+    for(i=0;i<n;i++){
+      dgs=document.getElementById("snow"+i).style;
+      if((parseInt(dgs.top)<h)&&(parseInt(dgs.left)<w)&&(parseInt(dgs.left)>-img_h)){
+        if(Math.round(Math.random())==1){o=1;}else{o=-1;}
+        dgs.top=parseInt(dgs.top)+vy+"px";
+        dgs.left=parseInt(dgs.left)+Math.random()*vx*o+wind+"px";
+        }
+      else{
+        dgs.top=-(Math.random()*h+img_h)+"px";
+        dgs.left=Math.random()*(w-img_h)+"px";
+        }
+    }
+    setTimeout("snow();",re);
+  }
+  </script>
+  
 </BODY></HTML>
